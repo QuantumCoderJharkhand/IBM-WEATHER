@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pro Weather Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <header>
+            <h1>Pro Weather Dashboard 🌩️</h1>
+
+            <div class="settings-container">
+                <div class="toggle-group">
+                    <span class="toggle-label">°C</span>
+                    <label class="switch">
+                        <input type="checkbox" id="unitToggle">
+                        <span class="slider"></span>
+                    </label>
+                    <span class="toggle-label">°F</span>
+                </div>
+                <div class="toggle-group">
+                    <i class="fa-solid fa-sun"></i>
+                    <label class="switch">
+                        <input type="checkbox" id="themeToggle">
+                        <span class="slider"></span>
+                    </label>
+                    <i class="fa-solid fa-moon"></i>
+                </div>
+            </div>
+
+            <div class="search-container">
+                <div class="input-wrapper">
+                    <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                    <input type="text" id="locationInput" placeholder="Search for a city...">
+                    <button id="clearBtn" class="clear-btn hidden" aria-label="Clear search"><i
+                            class="fa-solid fa-xmark"></i></button>
+                    <button id="geoBtn" class="geo-btn" aria-label="Use Current Location"><i
+                            class="fa-solid fa-location-crosshairs"></i></button>
+                </div>
+                <div class="autocomplete-results" id="autocomplete-results"></div>
+            </div>
+        </header>
+
+        <div class="tabs-container">
+            <ul class="tabs" id="locationTabs"></ul>
+        </div>
+
+        <div class="loader" id="loader"></div>
+
+        <div id="weather-display" class="hidden">
+            <div id="current-weather">
+                <h2 id="current-location"></h2>
+                <div id="current-temp" class="temperature"></div>
+                <div id="current-condition" class="condition">
+                    <img id="current-icon" src="" alt="Weather icon">
+                    <span id="current-condition-text"></span>
+                </div>
+                <div class="weather-details">
+                    <p id="main-details"></p>
+                    <p id="accuracy-details"></p>
+                </div>
+            </div>
+            <div id="forecast-weather">
+                <h2>5-Day Forecast</h2>
+                <div class="forecast-container" id="forecast-container"></div>
+            </div>
+        </div>
+        <div id="welcome-message">
+            <p>Search for a city to get started.</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
